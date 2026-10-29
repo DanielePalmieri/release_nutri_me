@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutri Gestionale (NutriMe) — Software Gestionale per Nutrizionisti</title>
+  <meta name="description" content="Nutri Gestionale (NutriMe) è un'applicazione desktop per biologi nutrizionisti e dietisti: gestione pazienti, piani alimentari, agenda appuntamenti con sincronizzazione Google Calendar e fatturazione." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #4ade80;
+      --accent-dark: #166534;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header, main, footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .badge {
+      background: var(--accent-dark);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--accent); }
+    .hero {
+      padding: 40px 0 24px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin: 0 0 12px;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 720px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      margin-right: 12px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      background: var(--accent);
+      color: #052e16;
+    }
+    .btn-secondary {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 40px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span>Nutri Gestionale</span>
+      <span class="badge">NutriMe Desktop</span>
+    </div>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./privacy.html">Norme sulla Privacy (Privacy Policy)</a>
+      <a href="./terms.html">Termini di Servizio</a>
+      <a href="https://github.com/DanielePalmieri/release_nutri_me/releases">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Nutri Gestionale (NutriMe)</h1>
+      <p class="lead">
+        Applicazione desktop Windows con archivio locale per la gestione dello studio nutrizionale:
+        cartelle cliniche dei pazienti, anamnesi, antropometria, composizione corporea, piani alimentari,
+        agenda appuntamenti sincronizzata con Google Calendar e fatturazione sanitaria.
+      </p>
+      <a class="btn" href="https://github.com/DanielePalmieri/release_nutri_me/releases">Scarica l'ultima versione per Windows</a>
+      <a class="btn btn-secondary" href="./privacy.html">Norme sulla Privacy (Privacy Policy)</a>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Archivio 100% Locale e Sicuro</h2>
+        <p>Tutti i dati clinici, anagrafici e contabili dei pazienti risiedono esclusivamente sul computer del professionista in un database locale protetto, con backup cifrati (.nutribak).</p>
+      </div>
+      <div class="card">
+        <h2>Piani Alimentari e Antropometria</h2>
+        <p>Gestione completa di visite, plicometria, bioimpedenziometria, calcolo del fabbisogno energetico e compilazione di piani nutrizionali personalizzati su database CREA.</p>
+      </div>
+      <div class="card">
+        <h2>Sincronizzazione Google Calendar</h2>
+        <p>Integrazione opzionale tramite OAuth 2.0 (scope limitato <code>calendar.app.created</code>) per sincronizzare gli appuntamenti dello studio su un calendario secondario dedicato ("Studio Nutrizione").</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Trasparenza sull'utilizzo dei dati Google (OAuth 2.0)</h2>
+      <p>
+        Quando l'utente sceglie facoltativamente di collegare il proprio account Google in <em>Impostazioni → Google Calendar</em>,
+        <strong>Nutri Gestionale</strong> richiede esclusivamente il permesso di identificare l'indirizzo email collegato (<code>openid</code>, <code>email</code>)
+        e di creare e gestire un calendario secondario dedicato agli appuntamenti dello studio (<code>https://www.googleapis.com/auth/calendar.app.created</code>).
+        L'applicazione non legge né modifica il calendario principale dell'utente e non trasmette alcun dato a server esterni.
+        Consulta le nostre <a href="./privacy.html" style="color: var(--accent);">Norme sulla Privacy complete</a> per tutti i dettagli.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Nutri Gestionale (NutriMe) — Sviluppato da Daniele Palmieri (<a href="mailto:d.palmieridev@gmail.com">d.palmieridev@gmail.com</a>)</div>
+    <div>
+      <a href="./privacy.html">Privacy Policy</a> &middot;
+      <a href="./terms.html">Termini di Servizio</a> &middot;
+      <a href="https://github.com/DanielePalmieri/release_nutri_me/releases">GitHub Releases</a>
+    </div>
+  </footer>
+</body>
+</html>

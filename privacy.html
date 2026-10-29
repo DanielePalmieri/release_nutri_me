@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Norme sulla Privacy (Privacy Policy) — Nutri Gestionale (NutriMe)</title>
+  <meta name="description" content="Informativa sulla privacy e sull'utilizzo dei dati delle API Google per l'applicazione desktop Nutri Gestionale (NutriMe)." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #4ade80;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    header, main, footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand { font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--accent); }
+    h1 { font-size: 2rem; margin-bottom: 8px; }
+    h2 {
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin-top: 32px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    p, li { color: #e2e8f0; }
+    code {
+      background: var(--card);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+    .box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    a { color: var(--accent); }
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="./index.html">Nutri Gestionale (NutriMe)</a>
+    <nav>
+      <a href="./index.html">Home</a>
+      <a href="./privacy.html">Privacy Policy</a>
+      <a href="./terms.html">Termini di Servizio</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Norme sulla Privacy / Privacy Policy</h1>
+    <p><strong>Ultimo aggiornamento / Last updated:</strong> 29 Ottobre 2026</p>
+    <p>
+      La presente Informativa sulla Privacy descrive come l'applicazione desktop <strong>Nutri Gestionale</strong> (nota anche come <strong>NutriMe</strong>),
+      sviluppata da Daniele Palmieri (<a href="mailto:d.palmieridev@gmail.com">d.palmieridev@gmail.com</a>), raccoglie, utilizza, conserva e protegge i dati dell'utente,
+      inclusi i dati ottenuti tramite le API di Google OAuth 2.0 e Google Calendar.
+    </p>
+
+    <h2>1. Architettura Locale ("Local-First") e Raccolta Dati</h2>
+    <p>
+      <strong>Nutri Gestionale</strong> è un'applicazione desktop che funziona interamente in locale sul computer Windows dell'utente:
+    </p>
+    <ul>
+      <li>Tutti i dati inseriti nell'applicazione (anagrafiche pazienti, misurazioni antropometriche, piani alimentari, appuntamenti e fatture) sono salvati <strong>esclusivamente in locale</strong> sul dispositivo dell'utente in un database SQLite locale.</li>
+      <li>Lo sviluppatore di Nutri Gestionale non gestisce alcun server cloud centrale e non ha accesso ad alcun dato clinico, personale o contabile inserito nell'applicazione.</li>
+    </ul>
+
+    <h2>2. Dati Google Acquisiti tramite OAuth 2.0 (Google User Data Accessed)</h2>
+    <p>
+      Il collegamento con Google Calendar è <strong>completamente opzionale</strong> e viene attivato solo su esplicita richiesta dell'utente nella sezione <em>Impostazioni → Google Calendar</em>.
+      Quando l'utente autorizza il collegamento, Nutri Gestionale richiede esclusivamente i seguenti ambiti di autorizzazione (OAuth scopes):
+    </p>
+    <ul>
+      <li><code>openid</code> e <code>email</code>: utilizzati unicamente per leggere l'indirizzo email dell'account Google collegato e mostrarlo nella schermata delle impostazioni dell'applicazione.</li>
+      <li><code>https://www.googleapis.com/auth/calendar.app.created</code>: ambito ristretto e non invasivo che consente a Nutri Gestionale di <strong>creare un calendario secondario dedicato</strong> (denominato <em>"Studio Nutrizione"</em>) e di creare, aggiornare o eliminare <strong>esclusivamente gli eventi all'interno di tale calendario secondario</strong> creato dall'app.</li>
+    </ul>
+    <p>
+      <strong>Nutri Gestionale NON ha accesso al calendario principale dell'utente</strong> né ad altri calendari preesistenti sull'account Google dell'utente.
+    </p>
+
+    <h2>3. Come Utilizziamo i Dati di Google (How We Use Google User Data)</h2>
+    <ul>
+      <li>L'indirizzo email Google (<code>email</code>) viene mostrato nell'interfaccia locale di Nutri Gestionale per indicare quale account Google è attualmente sincronizzato.</li>
+      <li>Il permesso <code>calendar.app.created</code> viene utilizzato esclusivamente per sincronizzare gli appuntamenti fissati nell'agenda di Nutri Gestionale verso il calendario secondario dedicato <em>"Studio Nutrizione"</em>, così che il professionista possa consultare i propri appuntamenti di studio anche da smartphone o web tramite Google Calendar.</li>
+      <li>I dati ottenuti dalle API di Google non vengono mai utilizzati per profilazione, pubblicità, ricerche di mercato o addestramento di modelli di Intelligenza Artificiale.</li>
+    </ul>
+
+    <h2>4. Archiviazione e Protezione dei Dati (Data Storage and Security)</h2>
+    <ul>
+      <li>Il token di aggiornamento OAuth 2.0 (<code>refresh_token</code>) rilasciato da Google viene cifrato e custodito esclusivamente sul computer locale dell'utente tramite le API crittografiche native del sistema operativo (Windows Data Protection API / Electron <code>safeStorage</code>).</li>
+      <li>Tutte le comunicazioni dirette tra il computer dell'utente e le API di Google (<code>oauth2.googleapis.com</code> e <code>www.googleapis.com/calendar/v3</code>) avvengono tramite protocollo sicuro HTTPS/TLS.</li>
+      <li>I file di backup generati dall'utente (<code>.nutribak</code>) sono protetti mediante cifratura autenticata <strong>AES-256-GCM</strong> con chiave derivata da password tramite <strong>Argon2id</strong> e non includono i token di sessione OAuth.</li>
+    </ul>
+
+    <h2>5. Condivisione e Trasferimento dei Dati a Terzi (Data Sharing and Transfers)</h2>
+    <p>
+      <strong>Nutri Gestionale non vende, non affitta, non condivide e non trasferisce a terze parti alcun dato personale o dato proveniente dalle API di Google.</strong>
+      Poiché l'applicazione opera interamente sul dispositivo locale dell'utente, lo scambio dei dati del calendario avviene direttamente tra il computer dell'utente e i server ufficiali di Google LLC.
+    </p>
+
+    <h2>6. Conservazione, Revoca e Cancellazione dei Dati (Data Retention and Deletion)</h2>
+    <p>
+      I dati e i token OAuth rimangono memorizzati sul computer dell'utente finché l'utente mantiene attivo il collegamento. L'utente può revocare l'accesso ed eliminare i dati in qualsiasi momento:
+    </p>
+    <ul>
+      <li><strong>Dall'applicazione Nutri Gestionale:</strong> aprendo <em>Impostazioni → Google Calendar</em> e cliccando su <strong>Scollega</strong>. Questa azione revoca immediatamente il token presso Google ed elimina in modo definitivo il token e i riferimenti di sincronizzazione dal database locale.</li>
+      <li><strong>Dal proprio Account Google:</strong> visitando la pagina <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Sicurezza e autorizzazioni dell'Account Google (myaccount.google.com/permissions)</a> e rimuovendo l'accesso a <strong>Nutri Gestionale</strong>.</li>
+      <li><strong>Disinstallazione o eliminazione locale:</strong> l'utente può cancellare l'intero archivio locale o disinstallare l'applicazione dal proprio PC in qualsiasi momento.</li>
+    </ul>
+
+    <div class="box">
+      <h2>7. Conformità alla Google API Services User Data Policy (Limited Use Disclosure)</h2>
+      <p>
+        L'utilizzo e il trasferimento da parte di <strong>Nutri Gestionale</strong> a qualsiasi altra applicazione delle informazioni ricevute dalle API di Google
+        rispettano la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+        inclusi i requisiti di <strong>Utilizzo Limitato (Limited Use requirements)</strong>.
+      </p>
+      <p>
+        <em>English Summary &amp; Limited Use Disclosure:</em><br />
+        <strong>Nutri Gestionale's use and transfer to any other app of information received from Google APIs will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+        including the Limited Use requirements.</strong><br /><br />
+        Specifically:
+        (1) Nutri Gestionale is a local-first desktop application; all application data and OAuth tokens are stored exclusively on the user's local device, with tokens encrypted via OS-level DPAPI (<code>safeStorage</code>).
+        (2) Nutri Gestionale accesses only <code>openid</code>, <code>email</code> (to display the connected Google account address in the app settings), and <code>https://www.googleapis.com/auth/calendar.app.created</code> (exclusively to create and synchronize appointments inside a dedicated secondary calendar created by the app).
+        (3) Nutri Gestionale does not read the user's primary calendar, does not transmit any user data to external third-party servers, does not share or sell Google user data to third parties, and never uses Google user data for advertising or AI/ML model training.
+        (4) Users can revoke access and delete all stored OAuth credentials at any time by clicking "Scollega" (Disconnect) in Settings &rarr; Google Calendar, or via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a>.
+      </p>
+    </div>
+
+    <h2>8. Contatti (Contact Information)</h2>
+    <p>
+      Per qualsiasi domanda o richiesta relativa alla presente Informativa sulla Privacy o al trattamento dei dati in Nutri Gestionale, è possibile contattare lo sviluppatore:<br />
+      <strong>Daniele Palmieri</strong> — Email: <a href="mailto:d.palmieridev@gmail.com">d.palmieridev@gmail.com</a>
+    </p>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Nutri Gestionale (NutriMe) — Daniele Palmieri</div>
+    <div>
+      <a href="./index.html">Home</a> &middot;
+      <a href="./privacy.html">Privacy Policy</a> &middot;
+      <a href="./terms.html">Termini di Servizio</a>
+    </div>
+  </footer>
+</body>
+</html>
